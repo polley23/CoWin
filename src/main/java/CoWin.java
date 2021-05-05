@@ -20,7 +20,7 @@ public class CoWin {
     private ObjectMapper objectMapper = new ObjectMapper();
     private Map<String,List<Response>> pinCodeResp = new ConcurrentHashMap<>();
 
-    void findVaccineCenterByPincodeForNext30Days(){
+    void findVaccineCenterByPincodeForNext90Days(){
         String api = "/v2/appointment/sessions/public/calendarByPin";
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -73,6 +73,6 @@ public class CoWin {
 
     public static void main(String[] args){
         CoWin coWin = new CoWin();
-        coWin.findVaccineCenterByPincodeForNext30Days();
+        coWin.findVaccineCenterByPincodeForNext90Days();
     }
 }
